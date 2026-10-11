@@ -14,6 +14,8 @@
     reloj: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
     casa: '<path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>',
     corazon: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>',
+    gota: '<path d="M12 2.7s-6.5 7.2-6.5 11.8a6.5 6.5 0 0 0 13 0C18.5 9.9 12 2.7 12 2.7z"/>',
+    enchufe: '<path d="M9 2v6M15 2v6"/><path d="M6 8h12v4a6 6 0 0 1-12 0z"/><path d="M12 18v4"/>',
     chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     check: '<path d="M20 6 9 17l-5-5"/>',
     pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
@@ -42,6 +44,11 @@
 
   /* ---------- Textos simples ---------- */
   $$("[data-text]").forEach((el) => { el.textContent = S[el.dataset.text] ?? ""; });
+  // Oculta datos de contacto que no se hayan rellenado (email, dirección…)
+  ["email", "direccion"].forEach((k) => {
+    if (!S[k]) $$(`[data-text="${k}"]`).forEach((el) => (el.closest("li") || el).remove());
+  });
+  $$("[data-hide-if-empty]").forEach((el) => { if (!S[el.dataset.hideIfEmpty]) el.remove(); });
   $$("[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
 
   $$("[data-logo]").forEach((el) => {
@@ -76,6 +83,7 @@
   };
 
   fill("ventajas-mini", (S.ventajas || []).slice(0, 3).map((v) => `<li>${icon("check")}${esc(v)}</li>`).join(""));
+  if (!(S.cifras || []).length) $(".stats")?.remove();
   fill("cifras", (S.cifras || []).map((c) => `<div class="stat"><strong>${esc(c.valor)}</strong><span>${esc(c.texto)}</span></div>`).join(""));
   fill("servicios", (S.servicios || []).map((s) => `
     <article class="card reveal">
@@ -144,9 +152,10 @@
 
   /* ---------- Datos estructurados (SEO local) ---------- */
   const ld = {
-    "@context": "https://schema.org", "@type": "LocalBusiness",
-    name: S.nombre, description: S.descripcion, telephone: S.telefono, email: S.email,
-    address: { "@type": "PostalAddress", streetAddress: S.direccion, addressLocality: S.ciudad },
+    "@context": "https://schema.org", "@type": ["Electrician", "Plumber"],
+    name: S.nombre, description: S.descripcion, telephone: S.telefono, email: S.email || undefined,
+    address: { "@type": "PostalAddress", streetAddress: S.direccion || undefined, addressLocality: S.ciudad, addressCountry: "ES" },
+    areaServed: S.zona || S.ciudad,
     url: location.origin, sameAs: Object.values(S.redes || {}).filter(Boolean),
   };
   const sc = document.createElement("script"); sc.type = "application/ld+json"; sc.textContent = JSON.stringify(ld);
@@ -203,8 +212,14 @@
       } finally { btn.disabled = false; btn.textContent = "Enviar solicitud"; }
     } else {
       const body = `Nombre: ${data.nombre}\nTeléfono: ${data.telefono}\nEmail: ${data.email || "-"}\nServicio: ${data.servicio || "-"}\n\n${data.mensaje || ""}`;
-      location.href = `mailto:${S.email}?subject=${encodeURIComponent("Solicitud de presupuesto")}&body=${encodeURIComponent(body)}`;
-      status.textContent = "Abriendo tu aplicación de correo..."; status.classList.add("ok");
+      if (S.email) {
+        location.href = `mailto:${S.email}?subject=${encodeURIComponent("Solicitud de presupuesto")}&body=${encodeURIComponent(body)}`;
+        status.textContent = "Abriendo tu aplicación de correo...";
+      } else {
+        window.open(`https://wa.me/${S.whatsapp}?text=${encodeURIComponent("Hola, quiero pedir presupuesto.\n\n" + body)}`, "_blank", "noopener");
+        status.textContent = "Abriendo WhatsApp con tu mensaje...";
+      }
+      status.classList.add("ok");
     }
   });
 })();

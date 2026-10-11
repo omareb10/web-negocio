@@ -1,96 +1,89 @@
 /* =========================================================
    CONFIGURACIÓN DEL NEGOCIO
-   Cambia SOLO este archivo para adaptar la web a cualquier
-   nicho (electricista, peluquería, restaurante, gimnasio...).
+   Cambia SOLO este archivo. Todo lo marcado con "PENDIENTE"
+   hay que rellenarlo con los datos reales antes de publicar.
    ========================================================= */
 window.SITE = {
   // --- Identidad ---
-  nombre: "Tu Negocio",
-  eslogan: "Servicio profesional de confianza en tu ciudad",
+  nombre: "Instalaciones PENDIENTE",            // PENDIENTE: nombre real de la empresa
+  eslogan: "Electricista y fontanero de confianza en PENDIENTE",
   descripcion:
-    "Más de 10 años ayudando a vecinos y empresas de la zona con un servicio rápido, honesto y garantizado.",
-  ciudad: "Tu Ciudad",
-  colorPrincipal: "#2563eb", // color de marca (botones, acentos)
-  logoTexto: "TN",            // iniciales si no tienes logo
-  logoImagen: "",             // ej: "img/logo.png" (deja vacío para usar logoTexto)
-  imagenHero: "",             // ej: "img/hero.jpg" (deja vacío para fondo degradado)
-  imagenNosotros: "",         // ej: "img/equipo.jpg" (foto de la sección "Por qué elegirnos")
+    "Instalaciones, reparaciones y averías de electricidad y fontanería para casas, comunidades y negocios. Presupuesto sin compromiso y trato directo con el profesional.",
+  ciudad: "PENDIENTE",                           // PENDIENTE: pueblo/ciudad principal
+  zona: "PENDIENTE y alrededores",               // PENDIENTE: zona que cubre
+  colorPrincipal: "#0b5cad",
+  logoTexto: "IP",                               // PENDIENTE: iniciales del nombre
+  logoImagen: "",                                // ej: "img/logo.png"
+  imagenHero: "",                                // ej: "img/hero.jpg"
+  imagenNosotros: "",                            // ej: "img/furgoneta.jpg"
 
   // --- Contacto ---
-  telefono: "+34 600 000 000",
-  whatsapp: "34600000000", // solo números, con prefijo de país
-  email: "info@tunegocio.com",
-  direccion: "Calle Mayor 1, 00000 Tu Ciudad",
-  googleMapsQuery: "Plaza Mayor, Madrid", // lo que buscarías en Google Maps
+  telefono: "+34 600 000 000",                   // PENDIENTE
+  whatsapp: "34600000000",                       // PENDIENTE: solo números, con 34 delante
+  email: "",                                     // PENDIENTE (si no tiene, déjalo vacío)
+  direccion: "",                                 // opcional: si trabaja a domicilio, puede dejarse vacío
+  googleMapsQuery: "",                           // PENDIENTE: ej. "Amposta, Tarragona" (muestra la zona en el mapa)
 
-  horario: [
-    { dias: "Lunes – Viernes", horas: "9:00 – 20:00" },
-    { dias: "Sábado", horas: "10:00 – 14:00" },
+  horario: [                                     // PENDIENTE: horario real
+    { dias: "Lunes – Viernes", horas: "8:00 – 19:00" },
+    { dias: "Sábado", horas: "Solo urgencias" },
     { dias: "Domingo", horas: "Cerrado" },
   ],
 
   redes: {
-    instagram: "https://instagram.com/",
+    instagram: "",
     facebook: "",
     tiktok: "",
-    google: "", // enlace a tu ficha de Google
+    google: "", // enlace a la ficha de Google cuando esté creada
   },
 
-  // --- Formulario (gratis en https://formspree.io). Si lo dejas vacío, abre el email del cliente ---
+  // --- Formulario (gratis en https://formspree.io). Vacío = abre el email del cliente ---
   formspreeId: "",
 
-  // --- Cifras de confianza ---
+  // --- Cifras de confianza: SOLO datos reales (pon cifras: [] para ocultar la franja) ---
   cifras: [
-    { valor: "10+", texto: "años de experiencia" },
-    { valor: "1.500", texto: "clientes atendidos" },
-    { valor: "4,9★", texto: "valoración media" },
-    { valor: "24h", texto: "respuesta máxima" },
+    { valor: "PENDIENTE", texto: "años de experiencia" },
+    { valor: "Luz + agua", texto: "un solo profesional para todo" },
+    { valor: "Gratis", texto: "presupuesto sin compromiso" },
   ],
 
-  // --- Servicios (icono: rayo, herramienta, estrella, escudo, reloj, casa, corazon, chat) ---
+  // --- Servicios (iconos: rayo, enchufe, gota, herramienta, escudo, reloj, casa, chat, estrella, corazon) ---
   servicios: [
-    { icono: "estrella", titulo: "Servicio principal", texto: "Describe aquí tu servicio estrella y el problema que resuelve al cliente." },
-    { icono: "herramienta", titulo: "Segundo servicio", texto: "Explica qué incluye, para quién es y por qué eres la mejor opción." },
-    { icono: "reloj", titulo: "Urgencias", texto: "Atención rápida cuando más lo necesitas. Respuesta en menos de 24 horas." },
-    { icono: "escudo", titulo: "Garantía", texto: "Todos nuestros trabajos tienen garantía por escrito. Sin sorpresas." },
-    { icono: "casa", titulo: "A domicilio", texto: "Nos desplazamos a tu casa o negocio en toda la zona." },
-    { icono: "chat", titulo: "Asesoramiento", texto: "Te aconsejamos sin compromiso para que elijas lo que de verdad necesitas." },
+    { icono: "rayo", titulo: "Instalaciones eléctricas", texto: "Instalaciones nuevas y reformas en viviendas, locales y naves. Cuadros eléctricos, cableado, enchufes e iluminación." },
+    { icono: "enchufe", titulo: "Averías eléctricas", texto: "Saltan los plomos, enchufes que no funcionan, cortocircuitos… Localizamos el fallo y lo dejamos resuelto." },
+    { icono: "gota", titulo: "Fontanería", texto: "Fugas, atascos, grifos, cisternas, cambio de tuberías e instalación de sanitarios." },
+    { icono: "herramienta", titulo: "Reformas de baño y cocina", texto: "Toda la parte de agua y electricidad de tu reforma, coordinada por un solo profesional." },
+    { icono: "casa", titulo: "Termos y calentadores", texto: "Instalación, sustitución y reparación de termos eléctricos y calentadores." },
+    { icono: "reloj", titulo: "Urgencias", texto: "Si tienes una fuga o te has quedado sin luz, llámanos y te decimos cuándo podemos ir." },
   ],
 
   // --- Por qué elegirnos ---
   ventajas: [
-    "Presupuesto claro y sin compromiso",
-    "Profesionales cualificados y con experiencia",
-    "Puntualidad y trato cercano",
-    "Precios justos y transparentes",
+    "Electricidad y fontanería con el mismo profesional",
+    "Presupuesto claro antes de empezar",
+    "Trato directo, sin intermediarios",
+    "Trabajo limpio y puntual",
   ],
 
   // --- Cómo trabajamos ---
   pasos: [
-    { titulo: "Contacta", texto: "Llámanos, escríbenos por WhatsApp o rellena el formulario." },
-    { titulo: "Presupuesto", texto: "Te damos un presupuesto claro y cerrado en poco tiempo." },
-    { titulo: "Lo hacemos", texto: "Realizamos el trabajo en la fecha acordada, con garantía." },
+    { titulo: "Llámanos", texto: "Por teléfono, WhatsApp o con el formulario. Cuéntanos qué pasa y, si puedes, envía una foto." },
+    { titulo: "Presupuesto", texto: "Vamos a verlo o te damos precio directamente si es algo sencillo. Sin compromiso." },
+    { titulo: "Trabajo hecho", texto: "Hacemos el trabajo el día acordado y lo dejamos todo funcionando y recogido." },
   ],
 
-  // --- Precios (pon precios: [] para ocultar la sección) ---
-  precios: [
-    { nombre: "Básico", precio: "Desde 29€", destacado: false, incluye: ["Visita y diagnóstico", "Presupuesto sin compromiso", "Atención en horario laboral"] },
-    { nombre: "Completo", precio: "Desde 79€", destacado: true, incluye: ["Todo lo del plan Básico", "Mano de obra incluida", "Garantía de 12 meses", "Prioridad de cita"] },
-    { nombre: "Empresas", precio: "A medida", destacado: false, incluye: ["Mantenimiento periódico", "Factura mensual", "Contacto directo"] },
-  ],
+  // --- Precios: vacío = sección oculta (cada trabajo se presupuesta) ---
+  precios: [],
 
-  // --- Opiniones: SUSTITUYE por reseñas reales de tus clientes (pon opiniones: [] para ocultar) ---
-  opiniones: [
-    { nombre: "Cliente 1", texto: "Aquí irá la opinión real de un cliente satisfecho.", estrellas: 5 },
-    { nombre: "Cliente 2", texto: "Pega aquí una reseña de tu ficha de Google.", estrellas: 5 },
-    { nombre: "Cliente 3", texto: "Las reseñas reales generan mucha más confianza.", estrellas: 5 },
-  ],
+  // --- Opiniones: SOLO reseñas reales de clientes (vacío = sección oculta) ---
+  opiniones: [],
 
   // --- Preguntas frecuentes ---
   faq: [
-    { p: "¿En qué zonas trabajáis?", r: "Trabajamos en toda la ciudad y alrededores. Consúltanos si estás fuera de la zona." },
-    { p: "¿El presupuesto tiene coste?", r: "No, el presupuesto es gratuito y sin compromiso." },
-    { p: "¿Qué formas de pago aceptáis?", r: "Efectivo, tarjeta, Bizum y transferencia." },
-    { p: "¿Tienen garantía los trabajos?", r: "Sí, todos nuestros trabajos incluyen garantía por escrito." },
+    { p: "¿En qué zonas trabajáis?", r: "Trabajamos en PENDIENTE y alrededores. Si estás algo más lejos, llámanos y lo miramos." },
+    { p: "¿El presupuesto cuesta algo?", r: "No, el presupuesto es gratuito y sin compromiso." },
+    { p: "¿Hacéis trabajos pequeños?", r: "Sí. Desde cambiar un enchufe o un grifo hasta una instalación completa." },
+    { p: "¿Atendéis urgencias?", r: "Sí. Llámanos directamente y te decimos cuándo podemos ir." },
+    { p: "¿Qué formas de pago aceptáis?", r: "PENDIENTE: efectivo, Bizum, transferencia…" },
   ],
 };
