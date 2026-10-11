@@ -5,29 +5,28 @@
    ========================================================= */
 window.SITE = {
   // --- Identidad ---
-  nombre: "Instalaciones PENDIENTE",            // PENDIENTE: nombre real de la empresa
-  eslogan: "Electricista y fontanero de confianza en PENDIENTE",
+  nombre: "Electricidad y Fontanería Karim",
+  eslogan: "Electricista y fontanero en Ulldecona",
   descripcion:
-    "Instalaciones, reparaciones y averías de electricidad y fontanería para casas, comunidades y negocios. Presupuesto sin compromiso y trato directo con el profesional.",
-  ciudad: "PENDIENTE",                           // PENDIENTE: pueblo/ciudad principal
-  zona: "PENDIENTE y alrededores",               // PENDIENTE: zona que cubre
+    "Más de 26 años haciendo instalaciones, reparaciones y averías de electricidad, fontanería, climatización y placas solares en Ulldecona, Alcanar y els Barris. Presupuesto sin compromiso y trato directo con el profesional.",
+  ciudad: "Ulldecona",
+  zona: "Ulldecona, Alcanar y els Barris",
   colorPrincipal: "#0b5cad",
-  logoTexto: "IP",                               // PENDIENTE: iniciales del nombre
-  logoImagen: "",                                // ej: "img/logo.png"
-  imagenHero: "",                                // ej: "img/hero.jpg"
-  imagenNosotros: "",                            // ej: "img/furgoneta.jpg"
+  logoTexto: "K",
+  logoImagen: "img/logo.svg",
+  imagenHero: "",                 // pon aquí una foto cuando la tengas, ej: "img/hero.jpg"
+  imagenNosotros: "",             // ej: "img/furgoneta.jpg"
 
   // --- Contacto ---
-  telefono: "+34 600 000 000",                   // PENDIENTE
-  whatsapp: "34600000000",                       // PENDIENTE: solo números, con 34 delante
-  email: "",                                     // PENDIENTE (si no tiene, déjalo vacío)
-  direccion: "",                                 // opcional: si trabaja a domicilio, puede dejarse vacío
-  googleMapsQuery: "",                           // PENDIENTE: ej. "Amposta, Tarragona" (muestra la zona en el mapa)
+  telefono: "696 19 26 16",
+  whatsapp: "34696192616",
+  email: "karimelhadri75@gmail.com",
+  direccion: "C/ Murada de Dalt, 28 · 43550 Ulldecona (Tarragona)",
+  googleMapsQuery: "Murada de Dalt 28, Ulldecona",
 
-  horario: [                                     // PENDIENTE: horario real
+  horario: [                      // PENDIENTE: confirmar horario real
     { dias: "Lunes – Viernes", horas: "8:00 – 19:00" },
-    { dias: "Sábado", horas: "Solo urgencias" },
-    { dias: "Domingo", horas: "Cerrado" },
+    { dias: "Sábado y domingo", horas: "Solo urgencias" },
   ],
 
   redes: {
@@ -40,29 +39,33 @@ window.SITE = {
   // --- Formulario (gratis en https://formspree.io). Vacío = abre el email del cliente ---
   formspreeId: "",
 
-  // --- Cifras de confianza: SOLO datos reales (pon cifras: [] para ocultar la franja) ---
+  // --- Cifras de confianza ---
   cifras: [
-    { valor: "PENDIENTE", texto: "años de experiencia" },
-    { valor: "Luz + agua", texto: "un solo profesional para todo" },
+    { valor: "+26", texto: "años de experiencia" },
+    { valor: "Luz y agua", texto: "también clima y solar" },
+    { valor: "Urgencias", texto: "también en fin de semana" },
     { valor: "Gratis", texto: "presupuesto sin compromiso" },
   ],
 
-  // --- Servicios (iconos: rayo, enchufe, gota, herramienta, escudo, reloj, casa, chat, estrella, corazon) ---
+  // --- Servicios (iconos: rayo, enchufe, gota, herramienta, escudo, reloj, casa, chat, estrella, corazon, copo, llama, sol) ---
   servicios: [
     { icono: "rayo", titulo: "Instalaciones eléctricas", texto: "Instalaciones nuevas y reformas en viviendas, locales y naves. Cuadros eléctricos, cableado, enchufes e iluminación." },
-    { icono: "enchufe", titulo: "Averías eléctricas", texto: "Saltan los plomos, enchufes que no funcionan, cortocircuitos… Localizamos el fallo y lo dejamos resuelto." },
-    { icono: "gota", titulo: "Fontanería", texto: "Fugas, atascos, grifos, cisternas, cambio de tuberías e instalación de sanitarios." },
-    { icono: "herramienta", titulo: "Reformas de baño y cocina", texto: "Toda la parte de agua y electricidad de tu reforma, coordinada por un solo profesional." },
+    { icono: "enchufe", titulo: "Averías de luz y agua", texto: "Saltan los plomos, un enchufe no funciona, una fuga o un atasco… Localizamos el fallo y lo dejamos resuelto." },
+    { icono: "gota", titulo: "Fontanería", texto: "Tuberías, grifos, cisternas, desagües e instalación de sanitarios." },
+    { icono: "herramienta", titulo: "Reformas de baño y cocina", texto: "Toda la parte de agua y electricidad de tu reforma, hecha por el mismo profesional." },
     { icono: "casa", titulo: "Termos y calentadores", texto: "Instalación, sustitución y reparación de termos eléctricos y calentadores." },
-    { icono: "reloj", titulo: "Urgencias", texto: "Si tienes una fuga o te has quedado sin luz, llámanos y te decimos cuándo podemos ir." },
+    { icono: "copo", titulo: "Aire acondicionado", texto: "Instalación y mantenimiento de equipos de climatización para casas y negocios." },
+    { icono: "llama", titulo: "Calefacción y radiadores", texto: "Instalación y reparación de calefacción y radiadores para que no pases frío en invierno." },
+    { icono: "sol", titulo: "Placas solares", texto: "Instalaciones fotovoltaicas para producir tu propia electricidad y ahorrar en la factura." },
+    { icono: "reloj", titulo: "Urgencias", texto: "Si la avería es grave, es prioridad: vamos aunque sea fin de semana." },
   ],
 
   // --- Por qué elegirnos ---
   ventajas: [
-    "Electricidad y fontanería con el mismo profesional",
+    "Más de 26 años de experiencia en la zona",
+    "Electricidad, fontanería y clima con el mismo profesional",
+    "Urgencias atendidas también en fin de semana",
     "Presupuesto claro antes de empezar",
-    "Trato directo, sin intermediarios",
-    "Trabajo limpio y puntual",
   ],
 
   // --- Cómo trabajamos ---
@@ -80,10 +83,14 @@ window.SITE = {
 
   // --- Preguntas frecuentes ---
   faq: [
-    { p: "¿En qué zonas trabajáis?", r: "Trabajamos en PENDIENTE y alrededores. Si estás algo más lejos, llámanos y lo miramos." },
+    { p: "¿En qué zonas trabajáis?", r: "En Ulldecona, Alcanar, els Barris d'Ulldecona y alrededores. Si estás algo más lejos, llámanos y lo miramos." },
     { p: "¿El presupuesto cuesta algo?", r: "No, el presupuesto es gratuito y sin compromiso." },
     { p: "¿Hacéis trabajos pequeños?", r: "Sí. Desde cambiar un enchufe o un grifo hasta una instalación completa." },
-    { p: "¿Atendéis urgencias?", r: "Sí. Llámanos directamente y te decimos cuándo podemos ir." },
-    { p: "¿Qué formas de pago aceptáis?", r: "PENDIENTE: efectivo, Bizum, transferencia…" },
+    { p: "¿Atendéis urgencias en fin de semana?", r: "Sí. Si es una avería grave, la tratamos como prioridad y vamos aunque sea fin de semana." },
+    { p: "¿Qué formas de pago aceptáis?", r: "Efectivo, Bizum y transferencia bancaria." },
   ],
+
+  // --- Datos legales (aviso legal) ---
+  titular: "Karim Elhadri Chaibi",
+  nif: "47475323G",
 };
