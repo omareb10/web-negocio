@@ -5,7 +5,7 @@
    ========================================================= */
 window.SITE = {
   // --- Identidad ---
-  nombre: "Electricidad y Fontanería Karim",
+  nombre: "Electricidad, Fontanería y Climatización Karim",
   eslogan: "Electricidad, fontanería y climatización en Ulldecona",
   descripcion:
     "Más de 26 años haciendo instalaciones y reparaciones de electricidad, fontanería, climatización y placas solares en Ulldecona, Alcanar y els Barris. Presupuesto sin compromiso y trato directo con el profesional.",

@@ -320,3 +320,10 @@ svg { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-widt
   .media-card__badge { right: 12px; }
   .footer__grid { grid-template-columns: 1fr; }
 }
+
+/* Nombre largo de la empresa en la cabecera */
+.logo__name { line-height: 1.15; }
+@media (max-width: 600px) {
+  .logo__name { font-size: .86rem; max-width: 210px; }
+  .logo__mark { flex-shrink: 0; }
+}
